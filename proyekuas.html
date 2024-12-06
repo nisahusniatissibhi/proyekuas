@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMM 4 Unpad</title>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: tan;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #f1f1f1;
+        }
+        nav a {
+            padding: 14px 20px;
+            text-decoration: none;
+            color: black;
+            cursor: pointer;
+        }
+        nav a:hover {
+            background-color: #ddd;
+        }
+        .container {
+            display: flex;
+            height: 400px;
+        }
+        .column {
+            padding: 20px;
+            border: 1px solid #ddd;
+            overflow-y: auto;
+        }
+        .left, .right {
+            flex: 1;
+            background-color: #f9f9f9;
+        }
+        .center {
+            flex: 2;
+            background-color: #ffffff;
+        }
+        .content {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>PMM 4 Unpad</h1>
+</header>
+
+<nav>
+    <a onclick="showContent('modulNusantara')">Modul Nusantara</a>
+    <a onclick="showContent('manfaatPMM')">Manfaat PMM Unpad</a>
+    <a onclick="showContent('kegiatanSosial')">Kegiatan Sosial</a>
+</nav>
+
+<div id="contentArea">
+    <div id="modulNusantara" class="content">
+        <h2>Modul Nusantara</h2>
+        <p>Modul Nusantara adalah program yang memperkenalkan keragaman budaya, sosial, dan geografis Indonesia kepada mahasiswa melalui kegiatan seperti kunjungan budaya, workshop, dan diskusi lintas budaya.</p>
+    </div>
+    <div id="manfaatPMM" class="content">
+        <h2>Manfaat PMM Unpad</h2>
+        <ul>
+            <li>Meningkatkan pengalaman akademik di luar kampus asal.</li>
+            <li>Memperluas jaringan pertemanan di tingkat nasional.</li>
+            <li>Mengembangkan wawasan lintas budaya dan keterampilan sosial.</li>
+        </ul>
+    </div>
+    <div id="kegiatanSosial" class="content">
+        <h2>Kegiatan Sosial</h2>
+        <p>Kegiatan sosial dalam PMM mencakup kerja bakti, bakti sosial, kampanye lingkungan, dan pengabdian masyarakat di sekitar kampus Unpad.</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="column left">
+        <h2>Laman PMM Unpad</h2>
+        <p>Kunjungi laman resmi PMM Unpad untuk informasi lebih lanjut tentang program ini.</p>
+        <h3>Keuntungan Mengikuti PMM</h3>
+        <ul>
+            <li>Pengalaman lintas budaya.</li>
+            <li>Jaringan luas dengan mahasiswa lainnya.</li>
+            <li>Meningkatkan keterampilan akademik dan sosial.</li>
+        </ul>
+    </div>
+
+    <div class="column center">
+        <h2>Informasi PMM Unpad</h2>
+        <p>Program Mobilitas Merdeka (PMM) Unpad memberikan kesempatan kepada mahasiswa dari seluruh Indonesia untuk menimba ilmu dan pengalaman di Universitas Padjadjaran selama satu semester.</p>
+    </div>
+
+    <div class="column right">
+        <h2>Tata Cara Mendaftar PMM</h2>
+        <ol>
+            <li>Kunjungi laman resmi PMM Unpad.</li>
+            <li>Isi formulir pendaftaran secara lengkap.</li>
+            <li>Unggah dokumen yang diperlukan seperti KHS dan KTP.</li>
+            <li>Tunggu proses seleksi dan konfirmasi.</li>
+        </ol>
+    </div>
+</div>
+
+<script>
+    function showContent(contentId) {
+        document.querySelectorAll('.content').forEach(function(content) {
+            content.classList.remove('active');
+        });
+        document.getElementById(contentId).classList.add('active');
+    }
+    // Menampilkan konten default saat halaman dimuat
+    window.onload = function() {
+        showContent('modulNusantara');
+    };
+</script>
+
+</body>
+</html>
